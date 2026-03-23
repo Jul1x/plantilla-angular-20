@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shop-flow": {
+    "plantilla-angular-20": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -42,7 +42,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -56,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "shop-flow:build:production"
+              "buildTarget": "plantilla-angular-20:build:production"
             },
             "development": {
-              "buildTarget": "shop-flow:build:development"
+              "buildTarget": "plantilla-angular-20:build:development"
             }
           },
           "defaultConfiguration": "development"
