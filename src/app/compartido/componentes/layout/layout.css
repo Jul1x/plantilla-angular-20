@@ -1,0 +1,21 @@
+.layout-contenedor {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contenido-principal {
+  flex-grow: 1; /* Ocupa el espacio restante del navegador */
+  padding: 2rem;
+  max-width: 1200px; /* Centra el contenido en pantallas gigantes */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pie-pagina {
+  background-color: white;
+  text-align: center;
+  padding: 1rem;
+  color: var(--color-texto-mutado);
+  border-top: 1px solid #e2e8f0;
+}

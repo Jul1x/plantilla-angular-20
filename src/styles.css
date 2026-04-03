@@ -1,1 +1,75 @@
-/* Puedes agregar estilos globales a este archivo, y también importar otros archivos de estilo. */
+/* ==========================================================================
+   VARIABLES GLOBALES UI (Modifica esto para cambiar los colores de tu app)
+   ========================================================================== */
+:root {
+  /* 🎨 Colores de marca */
+  --color-primario: #3b82f6; /* Azul brillante */
+  --color-primario-oscuro: #2563eb;
+  --color-secundario: #f59e0b; /* Naranja/Ámbar */
+  --color-secundario-oscuro: #d97706;
+  
+  /* 🌗 Fondos y Textos */
+  --color-fondo: #f8fafc;
+  --color-superficie: #ffffff; /* Tarjetas, modales */
+  --color-texto: #334155;
+  --color-texto-mutado: #64748b;
+  
+  /* 🚨 Colores semánticos */
+  --color-exito: #10b981;
+  --color-error: #ef4444;
+  --color-alerta: #f59e0b;
+  
+  /* 📏 Utilidades */
+  --radio-borde: 8px;
+  --sombra-suave: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --sombra-fuerte: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --transicion: all 0.3s ease;
+  --fuente-principal: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   RESETEO BÁSICO Y ESTILOS GLOBALES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+/* Estilos de enlaces por defecto */
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+
+a:hover {
+  color: var(--color-primario-oscuro);
+}
+
+/* Botón global de la plantilla */
+.btn-primario {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-borde);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transicion);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primario-oscuro);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-suave);
+}

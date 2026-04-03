@@ -1,0 +1,27 @@
+.error-contenedor {
+  text-align: center;
+  margin-top: 5rem;
+  background-color: var(--color-superficie);
+  padding: 4rem;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+}
+
+h1 {
+  font-size: 6rem;
+  color: var(--color-error);
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-texto);
+}
+
+p {
+  color: var(--color-texto-mutado);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}

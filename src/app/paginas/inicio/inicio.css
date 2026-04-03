@@ -1,0 +1,51 @@
+.tarjeta-bienvenida {
+  background-color: var(--color-superficie);
+  padding: 3rem;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+}
+
+h1 {
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+  color: var(--color-texto-mutado);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.seccion-demo {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.demostracion-signals, .demostracion-alertas {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.demostracion-alertas {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn-exito {
+  background-color: var(--color-exito);
+}
+.btn-exito:hover {
+  background-color: #059669; /* Verde oscuro */
+}
+
+.btn-error {
+  background-color: var(--color-error);
+}
+.btn-error:hover {
+  background-color: #dc2626; /* Rojo oscuro */
+}
