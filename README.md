@@ -1,54 +1,63 @@
 # 🚀 Plantilla Angular 20 (Boilerplate)
 
-¡Bienvenido(a) a tu nueva plantilla de Angular 20! Este proyecto ya ha sido configurado como base para que puedas empezar a desarrollar rápidamente.
+¡Bienvenido(a) a tu nueva plantilla de Angular 20! Este proyecto ya ha sido configurado como base para que puedas empezar a desarrollar rápidamente de forma muy organizada.
 
 ---
 
 ## 📦 Características Preconfiguradas
 
-1. **Angular 20**: Utiliza las últimas características (`signals`, componentes standalone, etc).
-2. **PWA (Progressive Web App)**: Configurado nativamente para que tu aplicación pueda ser instalada en dispositivos móviles o de escritorio y tenga soporte **Offline** gracias a su *Service Worker*.
-3. **Firebase & @angular/fire**: Las librerías están instaladas y listas para usar. Solo necesitas inicializar tu proyecto con tus llaves y entornos.
-4. **SweetAlert2**: Alertas modernas, hermosas y responsivas listas para usarse en tus componentes.
+1. **Angular 20**: Utiliza componentes `standalone` por defecto y nuevas reactividades ligeras.
+2. **PWA (Progressive Web App)**: Configuración lista para que tu aplicación ofrezca soporte **Offline** y sea instalable en teléfonos móviles y PC.
+3. **Firebase**: Las librerías de conexión (`firebase` y `@angular/fire`) están instaladas en el `package.json` y listas para configurarse e inicializarse.
+4. **SweetAlert2**: Alertas y notificaciones modernas integradas y listas para usar.
 
 ---
 
-## 📂 Estructura Principal del Proyecto
+## 📂 Arquitectura del Proyecto (Patrón de Carpetas)
 
-Si eres nuevo(a) en Angular, aquí tienes una guía rápida de los archivos que debes editar para empezar:
+Para mantener el código organizado y escalable mientras tu aplicación educativa crece, este proyecto exige utilizar la siguiente estructura de tres carpetas principales ubicadas en `src/app/`:
 
-- `src/main.ts`: Es la puerta de entrada de tu aplicación. Inicia el componente base. Rara vez necesitas editarlo profundamente.
-- `src/app/app.ts` (Componente Raíz): Aquí va tu lógica inicial en TypeScript. Todo lo que pongas aquí controlará la vista principal.
-- `src/app/app.html` (Vista Raíz): Aquí diseñas tu aplicación. Edita este archivo para construir tu página principal o el diseño envolvente (Navbar, Footer, etc).
-- `src/app/app.routes.ts` (Tus Rutas): Aquí le dices a Angular cómo navegar entre diferentes vistas o páginas (por ejemplo: Inicio, Catálogo, Perfil).
-- `src/app/app.config.ts` (Configuración): Donde inyectarás servicios globales como base de datos o el enrutador.
-- `angular.json`: El archivo maestro de configuración de Angular donde declaras tus recursos, estilos globales (`src/styles.css`) y configuraciones de construcción.
+### 1. 📄 `paginas/` (Vistas de Pantalla Completa)
+Aquí residen los componentes principales que actúan como "pantallas" completas. Cada una de estas páginas suele estar enlazada directamente a una ruta (URL) en el archivo `app.routes.ts`.
+- **Ejemplo**: `inicio`, `no-encontrado`, `panel-estudiante`.
+- **Comando para crear una página**: 
+  ```bash
+  ng generate component paginas/nombre-de-la-pagina
+  ```
+
+### 2. 🧩 `compartido/` (Shared / Componentes Visuales Reutilizables)
+Esta carpeta aloja los pedazos de la interfaz gráfica que vas a armar y reusar en múltiples partes de tu aplicación. Todo lo que contenga pertenece a la "Capa de UI" y no debería estar amarrado excesivamente a lógica de bases de datos.
+- **Ejemplo**: `compartido/componentes/navbar`, `compartido/componentes/tarjeta-actividad`, `compartido/componentes/layout`.
+- **Comando para crear un componente visual**:
+  ```bash
+  ng generate component compartido/componentes/nombre-del-componente
+  ```
+
+### 3. ⚙️ `nucleo/` (Core / Estado, Lógica y APIs)
+A diferencia de los componentes visuales compartidos, el *núcleo* contiene la lógica pesada, la conexión a bases de datos, manejo de estado global (si un usuario hizo login o no) y los interceptores. Estos son recursos globales.
+- **Ejemplo**: `nucleo/servicios/alerta.service.ts`, `nucleo/interceptores/error.ts`.
+- **Comando para crear un servicio**:
+  ```bash
+  ng generate service nucleo/servicios/nombre-del-servicio
+  ```
+
+---
+
+## 🛠️ Archivos Base y Flujo de Trabajo
+
+Si eres un desarrollador importando esta plantilla, tus primeros pasos son:
+
+1. **Revisar `src/app/app.routes.ts`**: Aquí registrarás las páginas (desde la carpeta `paginas/`) hacia las URLs.
+2. **Revisar el Layout**: En `src/app/compartido/componentes/layout/`, está el contenedor principal donde todo se inyecta, aquí está incluido tu `Navbar`.
 
 ---
 
-## 🛠️ ¿Cómo Continuar Creando?
+## 🚀 ¿Cómo Ejecutar tu Proyecto?
 
-Angular te permite generar archivos rápidamente desde la terminal utilizando su CLI:
-
-### 1. Crear un Componente (Una nueva sección o botón)
-Ejecuta el siguiente comando para generar un nuevo componente (por ejemplo, "catalogo"):
+Lanza y observa los cambios en vivo en tu servidor local ejecutando:
 ```bash
-ng generate component catalogo
+npm start
 ```
-Esto creará una carpeta en `src/app/catalogo/` con su TypeScript, HTML y CSS.
+Abre tu navegador en `http://localhost:4200/`. El sistema se auto-recargará con cada archivo que guardes en VS Code.
 
-### 2. Crear un Servicio (Para obtener datos)
-Si necesitas lógica para contactar Firebase o hacer cálculos:
-```bash
-ng generate service fire-db
-```
-
-### 3. Ejecutar el Proyecto
-Para lanzar tu aplicación en modo desarrollador:
-```bash
-ng serve
-```
-Y luego abre tu navegador en `http://localhost:4200` (este comando auto-recarga los cambios que hagas).
-
----
-¡Mucho éxito con tu proyecto `plantilla-angular-20`! Puedes modificar todos los comentarios guía de los archivos y este README en medida de que vayas avanzando.
+¡Mucho éxito desarrollando con esta `plantilla-angular-20`! Modifica este README como consideres necesario cuando tu proyecto cobre vida e identidad.
